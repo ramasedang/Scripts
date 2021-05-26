@@ -21,7 +21,13 @@ do
     else
         # Logic if no internet
         echo "Ping Fail - `date`"
-        /etc/init.d/xderm restart
-        sleep 60
+        /etc/init.d/login
+        sleep 1
+        /etc/init.d/rekonek
+        sleep 6
+        /etc/init.d/network restart
+        sleep 3
+        /etc/init.d/shadowsocksr restart
+        sleep 2
     fi
 done
